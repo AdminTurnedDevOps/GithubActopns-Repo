@@ -21,7 +21,9 @@ jobs:
         with:
           tf_actions_version: 0.12.13
           tf_actions_subcommand: "plan"
-          args: -var="client_secret=${{ secrets.clientSecret }}"
+        env:
+          TF_CLI_ARGS_init: '-var="client_secret=${{ secrets.clientSecret }}"'
+          #args: -var="client_secret=${{ secrets.clientSecret }}"
 
       - name: "Terraform Apply"
         uses: hashicorp/terraform-github-actions@master
