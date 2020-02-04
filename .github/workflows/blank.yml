@@ -21,11 +21,11 @@ jobs:
         with:
           tf_actions_version: 0.12.13
           tf_actions_subcommand: "plan"
-          #args: '-var="client_secret=${{ secrets.clientSecret }}"'
+          args: -var="client_secret=${{ secrets.clientSecret }}"
 
       - name: "Terraform Apply"
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.12.13
           tf_actions_subcommand: "apply"
-          args: '-var="client_secret=${{ secrets.clientSecret }}"'
+          args: -var="client_secret=${{ secrets.clientSecret }}"
